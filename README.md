@@ -45,7 +45,7 @@ python main.py --net_name {LSTM} --data{custom} --root_path {./} --data_path {da
 
 `--ae_n_epochs`: int, Number of epochs to train autoencoder   
 
-`--train_epochs`: int, Bynber if eoicgs 
+`--train_epochs`: int, Number of epochs to train  
 
 `--lr`:  float, learning rate
 
