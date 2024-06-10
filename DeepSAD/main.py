@@ -38,7 +38,7 @@ def main():
                 help='Name of the optimizer to use for autoencoder pretraining.')
     parser.add_argument('--ae_lr', type=float, default=0.001,
                 help='Initial learning rate for autoencoder pretraining. Default=0.001')
-    parser.add_argument('--ae_n_epochs', type=int, default=100, help='Number of epochs to train autoencoder.')
+    parser.add_argument('--ae_n_epochs', type=int, default=10, help='Number of epochs to train autoencoder.')
     parser.add_argument('--ae_lr_milestone', type=list, default=[5,7],
                 help='Lr scheduler milestones at which lr is multiplied by 0.1. Can be multiple and must be increasing.')
     parser.add_argument('--ae_batch_size', type=int, default=32, help='Batch size for mini-batch autoencoder training.')
@@ -50,14 +50,14 @@ def main():
     parser.add_argument('--root_path', type=str, default='/mnt/storage/dataset/htkim/KAMP/', help='root path of the data file')
     parser.add_argument('--data_path', type=str, default='competition_data.csv', help='data file')
     parser.add_argument('--checkpoints', type=str, default='./checkpoints/', help='location of model checkpoints')
-    parser.add_argument('--timeenc', type=int, default=0, help='type of time feature encoding')
+    parser.add_argument('--timeenc', type=int, default=1, help='type of time feature encoding')
 
     # classification task 
     parser.add_argument('--seq_len', type=int, default=50, help='input sequence length')
 
     # model define
     parser.add_argument('--dropout', type=float, default=0.05, help='dropout')
-    parser.add_argument('--embedding_dim', type=int, default=128, help='embedding dimension')
+    parser.add_argument('--embedding_dim', type=int, default=32, help='embedding dimension')
     parser.add_argument('--n_features', type=int, default=4, help='number of features')
     parser.add_argument('--n_layers', type=int, default=1, help='number of layers')
     parser.add_argument('--eta', type=float, default=1.0, help='Deep SAD hyperparameter eta (must be 0 < eta).')
@@ -65,7 +65,7 @@ def main():
     # optimization
     parser.add_argument('--num_workers', type=int, default=0, help='data loader num workers')
     parser.add_argument('--itr', type=int, default=2, help='experiments times')
-    parser.add_argument('--train_epochs', type=int, default=30, help='train epochs')
+    parser.add_argument('--train_epochs', type=int, default=10, help='train epochs')
     parser.add_argument('--batch_size', type=int, default=32, help='batch size of train input data')
     parser.add_argument('--patience', type=int, default=10, help='early stopping patience')
     parser.add_argument('--learning_rate', type=float, default=0.0001, help='optimizer learning rate')
